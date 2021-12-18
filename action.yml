@@ -1,0 +1,11 @@
+name: netflix-box
+author: Austen Stone <hi@austen.info>
+description: Update a gist to contain a crypto price
+
+branding:
+  icon: "clipboard"
+  color: "red"
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

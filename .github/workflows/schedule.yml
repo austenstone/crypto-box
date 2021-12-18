@@ -1,0 +1,17 @@
+on:
+  schedule:
+    - cron: "*/1 * * * *"
+
+name: Update a pinned gist with crypto price
+
+jobs:
+  update-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Update gist
+        uses: ./
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIST_ID: "40b6a7b4e19c1526619df8f99fbd522a"
+          PRODUCT_ID: "BTC-USD"

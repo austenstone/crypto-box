@@ -1,0 +1,21 @@
+{
+  "name": "netflix-box",
+  "version": "1.0.0",
+  "description": "Update a gist to contain a crypto price",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "npx ncc build ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gist-box": "^0.3.1",
+    "node-fetch": "^3.1.0"
+  },
+  "devDependencies": {
+    "@zeit/ncc": "^0.22.3"
+  }
+}
