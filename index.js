@@ -15,7 +15,12 @@ const updateGist = async (content) => {
 }
 
 const run = async () => {
-    const stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json())
+    let stats;
+    stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json()).catch(() => {
+        console.log('Failed to access the coinbase API ❌')
+        throw err;
+    })
+    console.log('Got coinbase API stats ✅')
 
     let percentChange = (stats.last - stats.open) / (stats.open * 100) * 10000
     percentChange = Math.round(percentChange * 100) / 100
@@ -29,4 +34,4 @@ Last updated at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '
     console.log('Updated gist successfully ✅')
 }
 
-run()
+run().catch((err) => console.error('Failure', err))
