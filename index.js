@@ -1,10 +1,9 @@
-
-import { GistBox } from 'gist-box';
-import fetch from 'node-fetch';
+import { GistBox } from 'gist-box'
+import fetch from 'node-fetch'
 
 const gistId = process.env.GIST_ID
 const ghToken = process.env.GH_TOKEN
-const productId = process.env.PRODUCT_ID || 'BTC-USD';
+const productId = process.env.PRODUCT_ID || 'BTC-USD'
 
 const updateGist = async (content) => {
     const box = new GistBox({ id: gistId, token: ghToken })
@@ -15,17 +14,17 @@ const updateGist = async (content) => {
     })
 }
 
-const run = async () => {
+export const run = async () => {
     const stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json())
 
-    let percentageChange = (stats.last - stats.open) / (stats.open * 100) * 10000;
+    let percentageChange = (stats.last - stats.open) / (stats.open * 100) * 10000
     percentageChange = Math.round(percentageChange * 100) / 100
 
-    let line = `1₿ = $${stats.low}`;
+    let line = `1₿ = $${stats.low}`
     line += `\n${percentageChange > 0 ? 'Up' : 'Down'} ${percentageChange}% today`
 
-    await updateGist(line);
+    await updateGist(line)
     console.log('Updated gist successfully! ✅')
 }
 
-run();
+run()
