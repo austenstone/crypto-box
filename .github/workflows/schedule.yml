@@ -13,6 +13,6 @@ jobs:
       - name: Update gist
         uses: ./
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: "40b6a7b4e19c1526619df8f99fbd522a"
           PRODUCT_ID: "BTC-USD"
