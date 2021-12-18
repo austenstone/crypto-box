@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "npx webpack --config webpack.config.js --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gha": "npx act -j update-gist"
   },
   "keywords": [],
   "author": "",

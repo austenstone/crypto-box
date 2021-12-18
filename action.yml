@@ -7,5 +7,5 @@ branding:
   color: "red"
 
 runs:
-  using: "node16"
-  main: "dist/index.js"
+  using: "node12"
+  main: "dist/790.index.js"
