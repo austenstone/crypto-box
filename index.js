@@ -1,5 +1,5 @@
-import { GistBox } from 'gist-box'
-import fetch from 'node-fetch'
+const { GistBox } = require('gist-box')
+const fetch = require('node-fetch');
 
 const gistId = process.env.GIST_ID
 const ghToken = process.env.GH_TOKEN
@@ -14,7 +14,7 @@ const updateGist = async (content) => {
     })
 }
 
-export const run = async () => {
+const run = async () => {
     const stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json())
 
     let percentChange = (stats.last - stats.open) / (stats.open * 100) * 10000
