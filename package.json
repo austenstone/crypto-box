@@ -1,5 +1,5 @@
 {
-  "name": "netflix-box",
+  "name": "crypto-box",
   "version": "1.0.0",
   "description": "Update a gist to contain a crypto price",
   "main": "index.js",
