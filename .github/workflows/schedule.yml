@@ -1,7 +1,7 @@
 on:
   push:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "* * * * *"
 
 name: Update a pinned gist with crypto price
 
