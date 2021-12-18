@@ -25,9 +25,11 @@ const run = async () => {
     let line = `\
 1₿ = $${stats.low}
 ${percentChange > 0 ? 'Up' : 'Down'} ${percentChange}% today
-Last updated at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
+Updated at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', timeZone: 'America/New_York' })} (EST)`
 
     await updateGist(line)
+
+    console.log(`\n${line}\n`)
     console.log('Updated gist successfully ✅')
 }
 
