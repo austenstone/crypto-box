@@ -20,8 +20,10 @@ export const run = async () => {
     let percentageChange = (stats.last - stats.open) / (stats.open * 100) * 10000
     percentageChange = Math.round(percentageChange * 100) / 100
 
-    let line = `1₿ = $${stats.low}`
-    line += `\n${percentageChange > 0 ? 'Up' : 'Down'} ${percentageChange}% today`
+    let line = `\
+1₿ = $${stats.low}
+${percentageChange > 0 ? 'Up' : 'Down'} ${percentageChange}% today
+Last updated at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
 
     await updateGist(line)
     console.log('Updated gist successfully! ✅')
