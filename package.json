@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "build": "npx webpack --config webpack.config.js --mode production",
+    "serve": "nodemon --exec babel-node index.js",
+    "build": "npx babel index.js --out-dir dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "gha": "npx act -j update-gist"
   },
@@ -14,10 +15,17 @@
   "license": "ISC",
   "dependencies": {
     "gist-box": "^0.3.1",
-    "node-fetch": "^3.1.0"
+    "node-fetch": "^2.6.6"
   },
   "devDependencies": {
-    "webpack": "^5.65.0",
-    "webpack-cli": "^4.9.1"
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-node": "0.0.1-security",
+    "babel-preset-es2015": "^6.24.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }

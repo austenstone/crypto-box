@@ -17,16 +17,16 @@ const updateGist = async (content) => {
 export const run = async () => {
     const stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json())
 
-    let percentageChange = (stats.last - stats.open) / (stats.open * 100) * 10000
-    percentageChange = Math.round(percentageChange * 100) / 100
+    let percentChange = (stats.last - stats.open) / (stats.open * 100) * 10000
+    percentChange = Math.round(percentChange * 100) / 100
 
     let line = `\
 1₿ = $${stats.low}
-${percentageChange > 0 ? 'Up' : 'Down'} ${percentageChange}% today
+${percentChange > 0 ? 'Up' : 'Down'} ${percentChange}% today
 Last updated at ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`
 
     await updateGist(line)
-    console.log('Updated gist successfully! ✅')
+    console.log('Updated gist successfully ✅')
 }
 
 run()
