@@ -6595,7 +6595,7 @@ const { GistBox } = __nccwpck_require__(607)
 const fetch = __nccwpck_require__(467);
 
 const gistId = process.env.GIST_ID
-const ghToken = process.env.GH_TOKEN
+const ghToken = process.env.GITHUB_TOKEN
 const productId = process.env.PRODUCT_ID || 'BTC-USD'
 
 const updateGist = async (content) => {

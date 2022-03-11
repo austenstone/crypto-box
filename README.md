@@ -19,16 +19,19 @@
 
 1. Fork this repo
 1. Edit the [environment variables](https://github.com/austenstone/crypto-box/blob/main/.github/workflows/schedule.yml) in `.github/workflows/schedule.yml`:
-account.
+   account.
 
-   - **GH_TOKEN:** The GitHub access token generated above.
+   - **GITHUB_TOKEN:** The GitHub access token generated above.
    - **GIST_ID:** The ID portion from your gist url: `https://gist.github.com/austenstone/`**`40b6a7b4e19c1526619df8f99fbd522a`**.
    - PRODUCT_ID: The ID portion from Coinbase: `https://pro.coinbase.com/trade/`**`BTC-USD`**. (default: `BTC-USD`)
+   - TIME_ZONE: Timezone to show last updated date/time. (default: `America/New_York`)
 
 ### Output
+
 Check out the [demo](https://gist.github.com/austenstone/40b6a7b4e19c1526619df8f99fbd522a).
 
 Example Output:
+
 ```
 1₿ = $46351.98
 Up 0.75% today
