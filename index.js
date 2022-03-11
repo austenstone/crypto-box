@@ -1,7 +1,7 @@
 const { GistBox } = require('gist-box')
 const fetch = require('node-fetch')
 
-const gistId = process.env.GIST_ID || "40b6a7b4e19c1526619df8f99fbd522a"
+const gistId = process.env.GIST_ID
 const token = process.env.GITHUB_TOKEN
 const productId = process.env.PRODUCT_ID || 'BTC-USD'
 const products = productId.split('-');
