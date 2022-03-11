@@ -6616,14 +6616,14 @@ const run = async () => {
     stats = await fetch(`https://api.pro.coinbase.com/products/${productId}/stats`).then(r => r.json())
     console.log('Got coinbase API stats ✅', stats)
 
-    let percentChange = (stats.last - stats.open) / (stats.open * 100) * 10000
-    percentChange = Math.round(percentChange * 100) / 100
+    let percent = (stats.last - stats.open) / (stats.open * 100) * 10000
+    percent = Math.round(percent * 100) / 100
 
-    let todaysChange = Math.round((stats.last - stats.open) * 100) / 100
+    let change = Math.round((stats.last - stats.open) * 100) / 100
 
     let content = `\
 1 ${products[0]} = ${stats.last} ${products[1]}
-${todaysChange} (${percentChange}%)${percentChange > 0 ? '⬆️' : '⬇️'}today
+${percent > 0 ? '+' : '-'}${change}(${percent}%)${percent > 0 ? '⬆️' : '⬇️'}today
 ⌚ ${new Date().toLocaleString('en-US', {
         timeZone,
         timeZoneName: 'short'
