@@ -7,6 +7,8 @@ const productId = process.env.PRODUCT_ID || 'BTC-USD'
 const products = productId.split('-');
 const timeZone = process.env.TIME_ZONE || 'America/New_York'
 
+if (!token || !gistId) return 1;
+
 const updateGist = async (content) => {
     const box = new GistBox({ id: gistId, token: token })
     await box.update({
