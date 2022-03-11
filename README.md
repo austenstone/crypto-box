@@ -13,7 +13,7 @@
 ### Prep work
 
 1. Create a new public GitHub Gist [gist.github.com](https://gist.github.com/)
-1. Create an access token with the `gist` scope and copy it. [github.com/settings/tokens/new](https://github.com/settings/tokens/new)
+1. Create an access token with the `gist` scope and copy it. [github.com/settings/tokens/new](https://github.com/settings/tokens/new?scopes=gist)
 
 ### Project setup
 
@@ -33,7 +33,7 @@ Check out the [demo](https://gist.github.com/austenstone/40b6a7b4e19c1526619df8f
 Example Output:
 
 ```
-1₿ = $46351.98
-Up 0.75% today
-Updated at 10:22 AM (EST)
+1 BTC = 39262.98 USD
+-47.45 (-0.12%)👎 today
+⌚ 3/11/2022, 9:20:43 AM EST
 ```
