@@ -30,7 +30,7 @@ const run = async () => {
 
     let content = `\
 1 ${products[0]} = ${stats.last} ${products[1]}
-${todaysChange} (${percentChange}%)${percentChange > 0 ? '👍' : '👎'} today
+${todaysChange} (${percentChange}%)${percentChange > 0 ? '⬆️' : '⬇️'}today
 ⌚ ${new Date().toLocaleString('en-US', {
         timeZone,
         timeZoneName: 'short'
