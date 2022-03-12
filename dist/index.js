@@ -6623,7 +6623,7 @@ const run = async () => {
 
     let content = `\
 1 ${products[0]} = ${stats.last} ${products[1]}
-${percent > 0 ? '+' : '-'}${change}(${percent}%)${percent > 0 ? '👍' : '👎'}today
+${percent > 0 ? '+' : ''}${change}(${percent}%)${percent > 0 ? '👍' : '👎'}today
 ⌚ ${new Date().toLocaleString('en-US', {
         timeZone,
         timeZoneName: 'short'
